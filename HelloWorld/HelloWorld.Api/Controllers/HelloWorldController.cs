@@ -1,5 +1,6 @@
 ﻿using HelloWorld.Api.Randomizer;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace HelloWorld.Api.Controllers
 {
@@ -11,13 +12,15 @@ namespace HelloWorld.Api.Controllers
 
         public HelloWorldController(IRandomOutcomeGenerator generator)
         {
-            _generator = generator;
+            _generator = generator ?? throw new ArgumentNullException(nameof(generator));
         }
 
         [HttpGet]
+        [Produces("application/json")]
         public IActionResult HelloWorld()
         {
-            return Ok(_generator.GetHelloWorldString());
+            var helloWorld = _generator.GetHelloWorldString();
+            return Ok(helloWorld);
         }
     }
 }

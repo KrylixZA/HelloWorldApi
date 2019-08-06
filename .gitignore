@@ -6,3 +6,5 @@
 /HelloWorld/HelloWorld.Api/bin/Debug/netcoreapp2.1
 /HelloWorld/HelloWorld.Api/obj
 /HelloWorld/HelloWorld.Api.Tests/obj
+/HelloWorld/.vs/HelloWorld
+/HelloWorld/HelloWorld.Api.Tests/bin/Debug/netcoreapp2.1
